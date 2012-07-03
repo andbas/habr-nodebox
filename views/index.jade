@@ -1,0 +1,12 @@
+!!! 5
+html(lang="en")
+  head
+    title habr-nodebox 
+  body
+    each item, i in content.contents
+      div
+        a(href="#{item.path}") #{item.path} - #{item.size}
+    div 
+      form#upload-form(action="/", method="POST", enctype="multipart/form-data")
+        input#file-input(name="file-input", type="file")
+        input#submit(value="Upload file", type="submit")      
